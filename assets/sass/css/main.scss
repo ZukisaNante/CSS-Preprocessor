@@ -3,6 +3,19 @@ $colors: (
   accent: #FFF6BB
 );
 
+body, html{
+  height: 100%;
+}
 body{
-  background-color: map-get($colors, primary);
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  
+  #bg{
+    clip-path: polygon(100% 0, 100% 79%, 64% 100%, 0 100%, 0 0);
+    background-color: map-get($colors, primary);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: -1;
+  }
 }
