@@ -17,13 +17,19 @@ body #bg {
   z-index: -1;
 }
 
+@media (min-width: 840px) {
+  body #bg {
+    -webkit-clip-path: polygon(0 0, 75% 0, 49% 100%, 0% 100%);
+            clip-path: polygon(0 0, 75% 0, 49% 100%, 0% 100%);
+  }
+}
+
 body header a {
   color: #FFF;
   text-decoration: none;
   padding: 15px;
   display: block;
-  -webkit-text-decoration: uppercase;
-          text-decoration: uppercase;
+  text-transform: uppercase;
 }
 
 main section#card {

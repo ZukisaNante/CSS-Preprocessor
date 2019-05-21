@@ -9,7 +9,13 @@ $border: 15px;
 @function color($color-name){
   @return map-get($colors, $color-name);
 }
-
+$desktop:840px;
+@mixin desktop {
+  @media (min-width: #{$desktop}){
+    @content;
+  
+  }
+}
 body, html{
   height: 100%;
 }
@@ -24,13 +30,16 @@ body{
     height: 100%;
     position: absolute;
     z-index: -1;
+    @include desktop{
+      clip-path: polygon(0 0, 75% 0, 49% 100%, 0% 100%);
+    }
   }
   header a{
     color: #FFF;
     text-decoration: none;
     padding: $padding;
     display: block;
-    text-decoration: uppercase;
+    text-transform: uppercase;
   }
 }
 main{
@@ -90,6 +99,6 @@ section#primary{
     text-align: center;
     margin: 50px auto 0 auto;
     padding: $padding;
-    
+
   }
 }
