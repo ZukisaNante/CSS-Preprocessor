@@ -32,6 +32,16 @@ body header a {
   text-transform: uppercase;
 }
 
+@media (min-width: 840px) {
+  main {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 50% auto;
+        grid-template-columns: 50% auto;
+        grid-template-areas: "primary card";
+  }
+}
+
 main section#card {
   background: #FFF;
   padding: 20px;
@@ -40,6 +50,19 @@ main section#card {
   -webkit-box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
           box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
   width: 80%;
+}
+
+@media (min-width: 840px) {
+  main section#card {
+    grid-area: card;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+    margin: 1em;
+  }
 }
 
 main ul {
@@ -70,6 +93,13 @@ section#primary {
   color: #FFF;
   padding: 15px;
   text-align: center;
+}
+
+@media (min-width: 840px) {
+  section#primary {
+    grid-area: primary;
+    text-align: left;
+  }
 }
 
 section#primary h1 {
